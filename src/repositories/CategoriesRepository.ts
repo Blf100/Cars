@@ -1,12 +1,10 @@
-import { response } from "express";
 import { Category } from "../model/Category";
+import { ICategoriesRepository } from "../repositories/IcategoriesRepository"
+import { ICreateCategoryDTO } from "../repositories/IcategoriesRepository"
 
-interface ICreateCategoryDTO {
-  name: string;
-  description: string;
-}
 
-class CategoriesRepository {
+
+class CategoriesRepository implements ICategoriesRepository {
   
   private categories: Category[];
 
